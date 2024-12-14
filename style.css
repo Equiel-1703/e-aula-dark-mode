@@ -1,0 +1,32 @@
+:root {
+	--bg-color: black;
+	--cards-bg-color: #333;
+	--text-color: white;
+	--titles-color: antiquewhite;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+body #page div#topofscroll.main-inner {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+body #page h1,
+body #page h2,
+body #page h3,
+body #page h4,
+body #page h5,
+body #page h6 {
+	color: var(--titles-color);
+}
+
+body#page-my-index #page #topofscroll div.card-body,
+body#page-my-index #page #topofscroll .card,
+body#page-site-index #page #page-content #region-main {
+	background-color: var(--cards-bg-color);
+	color: var(--text-color);
+}
