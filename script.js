@@ -6,47 +6,32 @@
 // @author       Henrique Rodrigues Barraz
 // @license      MIT
 // @match        https://e-aula.ufpel.edu.br/*
-// @icon         https://lh3.google.com/u/2/d/1w_3Rk94K25OsIEpq0M9muoFHrxjOIuuK
+// @icon         https://raw.githubusercontent.com/Equiel-1703/e-aula-dark-mode/refs/heads/main/icon/e-aula-dm-icon.ico
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
 
-    const new_css = `
-:root {
-	--bg-color: black;
-	--cards-bg-color: #333;
-	--text-color: white;
-	--titles-color: antiquewhite;
-}
+	const css_link = 'https://raw.githubusercontent.com/Equiel-1703/e-aula-dark-mode/refs/heads/main/style.css';
+	const fetch_css = (url) => {
+		fetch(url)
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
 
-body {
-	background-color: var(--bg-color);
-	color: var(--text-color);
-}
+				return response.text();
+			})
+			.then((css) => {
+				append_css(css);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	}
 
-body #page div#topofscroll.main-inner {
-	background-color: var(--bg-color);
-	color: var(--text-color);
-}
-
-body #page h1,
-body #page h2,
-body #page h3,
-body #page h4,
-body #page h5,
-body #page h6 {
-	color: var(--titles-color);
-}
-
-body#page-my-index #page #topofscroll div.card-body,
-body#page-my-index #page #topofscroll .card,
-body#page-site-index #page #page-content #region-main {
-	background-color: var(--cards-bg-color);
-	color: var(--text-color);
-}
-	`;
+    const new_css = fetch_css(css_link);
 
 	const append_css = (css) => {
 		const style_tag = document.createElement('style');
