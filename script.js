@@ -10,28 +10,43 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+	'use strict';
 
-	const css_link = 'https://raw.githubusercontent.com/Equiel-1703/e-aula-dark-mode/refs/heads/main/style.css';
-	const fetch_css = (url) => {
-		fetch(url)
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-
-				return response.text();
-			})
-			.then((css) => {
-				append_css(css);
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
+	const new_css = `
+	:root {
+	--bg-color: black;
+	--cards-bg-color: #333;
+	--text-color: white;
+	--titles-color: #e6e8ff;
 	}
 
-    const new_css = fetch_css(css_link);
+	body {
+		background-color: var(--bg-color);
+		color: var(--text-color);
+	}
+
+	body #page div#topofscroll.main-inner {
+		background-color: var(--bg-color);
+		color: var(--text-color);
+	}
+
+	body #page h1,
+	body #page h2,
+	body #page h3,
+	body #page h4,
+	body #page h5,
+	body #page h6 {
+		color: var(--titles-color);
+	}
+
+	body#page-my-index #page #topofscroll div.card-body,
+	body#page-my-index #page #topofscroll .card,
+	body#page-site-index #page #page-content #region-main {
+		background-color: var(--cards-bg-color);
+		color: var(--text-color);
+	}
+	`;
 
 	const append_css = (css) => {
 		const style_tag = document.createElement('style');
