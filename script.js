@@ -255,7 +255,6 @@ div#page-wrapper nav.navbar a.navbar-brand {
 	const create_separation_div = () => {
 		const separation_div = document.createElement('div');
 		separation_div.className = 'divider border-left h-75 align-self-center ml-1 mr-3';
-		separation_div.style = 'width: 2px;';
 		return separation_div;
 	}
 
