@@ -1,60 +1,55 @@
 :root {
 	--bg-color: black;
 	--cards-bg-color: #202020;
+	--table-row-even: #434343;
 	--text-color: white;
 	--text-hover-color: #6493ff;
+	--dark-blue: #06293d;
 	--titles-color: #c7d8ff;
 }
 
 body {
 	color: var(--text-color);
-	background: linear-gradient(90deg, #000000 0%, #2f2f2f 100%);
-	background-size: 400% 400%;
+	background: linear-gradient(90deg, #000000 0%, #2f2f2f 100%) !important;
+	background-size: 400% 400% !important;
 }
 
-body #page div#topofscroll.main-inner {
-	background-color: var(--bg-color);
-	color: var(--text-color);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--titles-color) !important;
 }
 
-body #page h1,
-body #page h2,
-body #page h3,
-body #page h4,
-body #page h5,
-body #page h6 {
-	color: var(--titles-color);
-}
-
+/* Fundos cinza-claro */
 body div.card-body,
 body .card,
-body #region-main {
+body #region-main,
+.activity-header,
+.activity,
+.availabilityinfo {
 	background-color: var(--cards-bg-color) !important;
 	color: var(--text-color) !important;
 }
 
-body#page-my-index #page #topofscroll .list-group-item {
-	background-color: var(--cards-bg-color);
+/* Fundos pretos */
+div#topofscroll.main-inner,
+#page-header,
+input[type="text"],
+select {
+	background-color: var(--bg-color) !important;
 }
 
-body#page-my-index #page #topofscroll .row {
+.list-group-item,
+#page [role="menu"],
+.dropdown-menu {
+	background-color: var(--cards-bg-color) !important;
+}
+
+.row {
 	align-items: center;
-}
-
-body #page button.btn,
-body #page .btn.btn-outline-secondary {
-	background-color: var(--cards-bg-color) !important;
-	color: var(--text-color) !important;
-}
-
-body #page button.btn:hover,
-body #page .btn.btn-outline-secondary:hover {
-	color: var(--text-hover-color) !important;
-}
-
-body#page-my-index #page [role="menu"],
-body#page-my-index #page .dropdown-menu {
-	background-color: var(--cards-bg-color) !important;
 }
 
 a.page-link,
@@ -63,69 +58,129 @@ a.page-link,
 	border: none;
 }
 
-body#page-my-index #page #topofscroll input[type="text"],
-body#page-my-index #page #topofscroll select {
-	background-color: var(--bg-color);
-}
-
-body#page-my-index #page #topofscroll input[type="text"]:focus {
+input[type="text"]:focus {
 	background-color: var(--cards-bg-color);
 }
 
-body#page-my-index #page #topofscroll .text-muted,
-body#page-my-index #page #topofscroll span.categoryname {
+.text-muted,
+span.categoryname {
 	color: var(--text-color) !important;
 }
 
-body #page .course-card-view {
+.course-card-view {
 	background-color: #151515 !important;
 }
 
-body .activity-item:not(.activityinline) {
-	border: 1px solid rgb(6, 41, 61) !important;
+.activity-item:not(.activityinline) {
+	border: 1px solid var(--dark-blue) !important;
+}
+
+.bg-light,
+.bg-white {
+	background-color: var(--cards-bg-color) !important;
+}
+
+.border {
+	border: 1px solid var(--dark-blue) !important;
+}
+
+.dashboard-card {
+	box-shadow: 1px 0px 11px var(--dark-blue) !important;
+}
+
+/* These rules are for fixing elements alignment in the course participants page */
+div.border-radius.my-2.p-2.bg-white.border.d-flex.flex-column.flex-md-row.align-items-md-stretch.mr-0.ml-0.row {
+	align-items: center !important;
+}
+
+div.border-radius.my-2.p-2.bg-white.border.d-flex.flex-column.flex-md-row.align-items-md-stretch.mr-0.ml-0.row> :not(button) {
+	margin: 0 !important;
+	margin-right: 0.25rem !important;
+}
+
+/* Buttons */
+button.btn,
+.btn.btn-outline-secondary,
+.btn-secondary,
+.custom-select {
+	background-color: var(--cards-bg-color) !important;
+	color: var(--text-color) !important;
+}
+
+button.btn:hover,
+bod.btn.btn-outline-secondary:hover,
+.btn-secondary:hover,
+.custom-select:hover {
+	color: var(--text-hover-color) !important;
+}
+
+/* Tables */
+.generaltable tbody tr:nth-of-type(even) {
+	background-color: var(--table-row-even) !important;
+}
+
+.generaltable {
+	border: 0;
+	border-spacing: 0 !important;
+	color: var(--text-color) !important;
+}
+
+.generaltable td,
+.generaltable th {
+	border: 0 !important;
+}
+
+.table {
+	border: 1px solid var(--dark-blue) !important;
+}
+
+table.user-grade *,
+.user-report-container,
+.row.header {
+	background-color: var(--cards-bg-color) !important;
 }
 
 /* Icons */
-body .icon-no-margin {
+.icon-no-margin {
 	color: var(--text-color) !important;
-	background-color: var(--bg-color);
+	/* background-color: var(--bg-color); */
 }
 
-body .course-section-header .icon-no-margin {
+.course-section-header .icon-no-margin {
 	color: var(--titles-color) !important;
 	background-color: var(--cards-bg-color) !important;
 }
 
-body .activityiconcontainer .activityicon {
+.activityiconcontainer .activityicon {
 	filter: invert(1) !important;
 }
 
 /* Navbar */
-body div#page-wrapper nav.navbar {
+div#page-wrapper nav.navbar {
 	background-color: var(--bg-color) !important;
 	color: var(--text-color);
 	border-bottom: #2ea5d7 1px solid;
 }
 
-body div#page-wrapper nav.navigation,
-body div#page-wrapper .moremenu .nav-tabs {
+div#page-wrapper nav.navigation,
+div#page-wrapper .moremenu .nav-tabs {
 	background-color: var(--bg-color) !important;
 	color: var(--text-color);
 }
 
-body div#page-wrapper nav.navbar a.nav-link {
+div#page-wrapper nav.navbar a.nav-link {
 	color: var(--text-color) !important;
 }
 
-body div#page-wrapper nav.navbar a.nav-link:hover {
+div#page-wrapper nav.navbar a.nav-link:hover {
 	color: var(--text-hover-color) !important;
 }
 
-body div#page-wrapper nav.navbar a.navbar-brand {
+div#page-wrapper nav.navbar a.navbar-brand {
 	color: var(--titles-color) !important;
 }
 
 /* Modal Content */
-body .modal-content {
+.modal-content {
 	background-color: var(--bg-color) !important;
 }
