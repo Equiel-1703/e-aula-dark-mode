@@ -19,6 +19,8 @@ Este userscript adiciona um botão que permite habilitar e desabilitar o modo no
 
 - Clique no botão que aparece no canto superior direito da página para ativar ou desativar o modo noturno.
 
+![e-Aula Dark Mode Button](https://i.ibb.co/9tTt3Pb/image.png)
+
 ## Contribuição
 
 Sinta-se à vontade para contribuir com melhorias ou relatar problemas através de pull requests ou issues no repositório.
